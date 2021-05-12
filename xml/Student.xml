@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<学生 xmlns="http://jw.nju.edu.cn/schema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jw.nju.edu.cn/schema Student.xsd">
+	<学号>181250016</学号>
+	<个人基本信息 xmlns:nju="http://www.nju.edu.cn/schema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.nju.edu.cn/schema PersonInfo.xsd">
+		<nju:姓名>陈昱霖</nju:姓名>
+		<nju:性别>男</nju:性别>
+		<nju:出生日期>2000-04-07</nju:出生日期>
+		<nju:身份证号>123456200004071234</nju:身份证号>
+		<nju:学校部门>
+			<nju:院系>软件学院</nju:院系>
+		</nju:学校部门>
+	</个人基本信息>
+	<成绩信息>
+		<成绩 课程编号="123456" 成绩性质="平时成绩">
+			<得分>99</得分>
+		</成绩>
+		<成绩 课程编号="123456" 成绩性质="总评成绩">
+			<得分>98</得分>
+		</成绩>
+		<成绩 课程编号="123457" 成绩性质="总评成绩">
+			<得分>97</得分>
+		</成绩>
+	</成绩信息>
+</学生>

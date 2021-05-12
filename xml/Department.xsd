@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.nju.edu.cn/schema" xmlns:nju="http://www.nju.edu.cn/schema"  elementFormDefault="qualified">
+
+    <element name="学校部门" type="nju:部门类型"></element>
+
+	<complexType name="部门类型">
+    	<choice>
+    		<element name="院系" type="nju:院系"></element>
+    		<element name="党群组织" type="nju:党群组织"></element>
+    		<element name="直属单位" type="nju:直属单位"></element>
+    		<element name="行政部门" type="nju:行政部门"></element>
+    	</choice>
+    </complexType>
+
+    <simpleType name="党群组织">
+    	<restriction base="string">
+			<enumeration value="党委办公室"></enumeration>
+			<enumeration value="纪委办公室"></enumeration>
+			<enumeration value="组织部"></enumeration>
+			<enumeration value="宣传部"></enumeration>
+			<enumeration value="团委、学生会"></enumeration>
+		</restriction>
+    </simpleType>
+    
+    <simpleType name="行政部门">
+    	<restriction base="string">
+			<enumeration value="校长办公室"></enumeration>
+			<enumeration value="人力资源处"></enumeration>
+			<enumeration value="教务处"></enumeration>
+			<enumeration value="财务处"></enumeration>
+			<enumeration value="保卫处"></enumeration>
+		</restriction>
+    </simpleType>
+    
+    <simpleType name="直属单位">
+    	<restriction base="string">
+			<enumeration value="图书馆"></enumeration>
+			<enumeration value="中国社会科学研究评价中心"></enumeration>
+			<enumeration value="档案馆、 校史博物馆"></enumeration>
+			<enumeration value="南京大学出版社"></enumeration>
+		</restriction>
+    </simpleType>
+    
+    <simpleType name="院系">
+    	<restriction base="string">
+			<enumeration value="软件学院"></enumeration>
+			<enumeration value="文学院"></enumeration>
+			<enumeration value="物理学院"></enumeration>
+			<enumeration value="工程管理学院"></enumeration>
+		</restriction>
+    </simpleType>
+    
+</schema>
