@@ -5,6 +5,7 @@ import javax.xml.transform.Transformer;
 import javax.xml.transform.TransformerFactory;
 import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
+
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 
@@ -17,20 +18,20 @@ public class CreateXMLbyDOM {
 
     public static void main(String[] args) {
         Document doc;
-        Element studentList,student,studentId,basicInfo,name,sex,birthday,id,department,major,scoreList,score,point;
+        Element studentList, student, studentId, basicInfo, name, sex, birthday, id, department, major, scoreList, score, point;
 
-        try{
+        try {
             DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
             DocumentBuilder builder = factory.newDocumentBuilder();
             doc = builder.newDocument();
-            if(null!=doc){
+            if (null != doc) {
                 studentList = doc.createElement("学生列表");
 
-                for(int i=0;i<15;i++){
+                for (int i = 0; i < 15; i++) {
                     student = doc.createElement("学生");
 
-                    String sid="",sname="",ssex="",sbirth="",sidno="";
-                    switch(i){
+                    String sid = "", sname = "", ssex = "", sbirth = "", sidno = "";
+                    switch (i) {
                         case 0:
                             sid = "181250016";
                             sname = "陈昱霖";
@@ -173,12 +174,12 @@ public class CreateXMLbyDOM {
 
                     scoreList = doc.createElement("成绩信息");
 
-                    String [] scoreProperty = {"平时成绩","期末成绩","总评成绩"};
-                    int [] scores = {60,60,70,80,90,60,60,70,80,90,60,60,70,80,90};
-                    String [] courseId = {"123456","123457","123458","123459","123460"};
-                    for(int j=0;j<5;j++){
+                    String[] scoreProperty = {"平时成绩", "期末成绩", "总评成绩"};
+                    int[] scores = {60, 60, 70, 80, 90, 60, 60, 70, 80, 90, 60, 60, 70, 80, 90};
+                    String[] courseId = {"123456", "123457", "123458", "123459", "123460"};
+                    for (int j = 0; j < 5; j++) {
 
-                        for(int k=0;k<3;k++){
+                        for (int k = 0; k < 3; k++) {
                             score = doc.createElement("成绩");
                             score.setAttribute("课程编号", courseId[j]);
                             score.setAttribute("成绩性质", scoreProperty[k]);
@@ -201,7 +202,7 @@ public class CreateXMLbyDOM {
                 transformer.transform(new DOMSource(doc), new StreamResult("xml/StudentList.xml"));
 
             }
-        }catch (Exception e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
 
