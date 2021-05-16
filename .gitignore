@@ -1,6 +1,6 @@
-/.idea/
-/target/
-/out/
-/product/
+.idea/
+target/
+out/
+product/
 *.iml
 .DS_Store

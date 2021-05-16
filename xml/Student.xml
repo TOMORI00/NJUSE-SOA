@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<学生 xmlns="http://jw.nju.edu.cn/schema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jw.nju.edu.cn/schema Student.xsd">
+<学生 xmlns="http://jw.nju.edu.cn/schema" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://jw.nju.edu.cn/schema Student.xsd">
 	<学号>181250016</学号>
 	<个人基本信息 xmlns:nju="http://www.nju.edu.cn/schema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.nju.edu.cn/schema PersonInfo.xsd">
 		<nju:姓名>陈昱霖</nju:姓名>
