@@ -25,6 +25,7 @@
                         <xsl:value-of select="@成绩性质"/>
                     </xsl:attribute>
                     <xsl:for-each select="key('score-key', concat(@课程编号,@成绩性质))">
+                        <xsl:sort select="得分"/>
                         <成绩>
                             <学号>
                                 <xsl:value-of select="../../学号"/>

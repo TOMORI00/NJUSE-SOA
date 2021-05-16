@@ -15,7 +15,7 @@ public class XSLT {
 
     public static void main(String[] args) {
         convert("xml/ScoreList.xml", "xml/StudentList.xml", "xml/Convert.xsl");
-//        validate("xml/ScoreList.xml", "xml/ScoreList.xsd");
+        validate("xml/ScoreList.xml", "xml/ScoreList.xsd");
     }
 
     private static void convert(String dest, String src, String xsl) {
