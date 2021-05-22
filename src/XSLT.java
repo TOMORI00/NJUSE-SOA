@@ -1,5 +1,3 @@
-import org.xml.sax.SAXException;
-
 import javax.xml.XMLConstants;
 import javax.xml.transform.Transformer;
 import javax.xml.transform.TransformerFactory;
@@ -11,11 +9,14 @@ import javax.xml.validation.Validator;
 import java.io.File;
 import java.io.FileOutputStream;
 
+/**
+ * @author Daiqj
+ */
 public class XSLT {
 
     public static void main(String[] args) {
         convert("xml/ScoreList.xml", "xml/StudentList.xml", "xml/Convert.xsl");
-        validate("xml/ScoreList.xml", "xml/ScoreList.xsd");
+//        validate("xml/ScoreList.xml", "xml/ScoreList.xsd");
     }
 
     private static void convert(String dest, String src, String xsl) {
@@ -23,8 +24,8 @@ public class XSLT {
         try {
             Transformer transformer = tf.newTransformer(new StreamSource(xsl));
             transformer.transform(
-                new StreamSource(src),
-                new StreamResult(new FileOutputStream(dest))
+                    new StreamSource(src),
+                    new StreamResult(new FileOutputStream(dest))
             );
         } catch (Exception e) {
             e.printStackTrace();

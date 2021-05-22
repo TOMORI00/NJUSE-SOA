@@ -1,32 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://jw.nju.edu.cn/schema"  xmlns:nju="http://www.nju.edu.cn/schema" xmlns:tns="http://jw.nju.edu.cn/schema"  elementFormDefault="qualified">
-<import namespace="http://www.nju.edu.cn/schema" schemaLocation="Department.xsd" />
-	<element name="课程信息" type="tns:课程信息类型"></element>
-	<complexType name="课程信息类型">
-		<sequence>
-		    <element name="上课学期" type="string"></element>
-		    <element name="上课年级" type="int"></element>
-		    <element name="上课专业" type="nju:院系"></element>
-		    <element name="课程编号" type="int"></element>
-		    <element name="课程名称" type="string"></element>
-		    <element name="课程性质" type="tns:课程性质类型"></element>
-		    <element name="开课院系" type="nju:院系"></element>
-		    <element name="学分"    type="int"></element>
-		    <element name="学时"    type="int"></element>
-		    <element name="教师"    type="string"></element>
-		    <element name="上课地点" type="string"></element>
-	    </sequence>
-	 </complexType>
-	 
-	 <simpleType name="课程性质类型">
-		<restriction base="string">
-			<enumeration value="通识"></enumeration>
-			<enumeration value="公选"></enumeration>
-			<enumeration value="通修"></enumeration>
-			<enumeration value="平台"></enumeration>
-			<enumeration value="核心"></enumeration>
-			<enumeration value="指选"></enumeration>
-			<enumeration value="选修"></enumeration>
-		</restriction>
-	 </simpleType>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+        targetNamespace="http://jw.nju.edu.cn/schema" xmlns:nju="http://www.nju.edu.cn/schema"
+        xmlns:tns="http://jw.nju.edu.cn/schema" elementFormDefault="qualified">
+    <import namespace="http://www.nju.edu.cn/schema" schemaLocation="Department.xsd"/>
+    <element name="课程信息" type="tns:课程信息类型"/>
+    <complexType name="课程信息类型">
+        <sequence>
+            <element name="上课学期" type="string"/>
+            <element name="上课年级" type="int"/>
+            <element name="上课专业" type="nju:院系"/>
+            <element name="课程编号" type="int"/>
+            <element name="课程名称" type="string"/>
+            <element name="课程性质" type="tns:课程性质类型"/>
+            <element name="开课院系" type="nju:院系"/>
+            <element name="学分" type="int"/>
+            <element name="学时" type="int"/>
+            <element name="教师" type="string"/>
+            <element name="上课地点" type="string"/>
+        </sequence>
+    </complexType>
+
+    <simpleType name="课程性质类型">
+        <restriction base="string">
+            <enumeration value="通识"/>
+            <enumeration value="公选"/>
+            <enumeration value="通修"/>
+            <enumeration value="平台"/>
+            <enumeration value="核心"/>
+            <enumeration value="指选"/>
+            <enumeration value="选修"/>
+        </restriction>
+    </simpleType>
 </schema>

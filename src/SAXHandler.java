@@ -1,10 +1,11 @@
+import org.xml.sax.Attributes;
+import org.xml.sax.SAXException;
+import org.xml.sax.helpers.DefaultHandler;
+
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
-import org.xml.sax.Attributes;
-import org.xml.sax.SAXException;
-import org.xml.sax.helpers.DefaultHandler;
 
 /**
  * @author Daiqj
@@ -17,8 +18,8 @@ public class SAXHandler extends DefaultHandler {
     BufferedWriter writer = null;
     String fileName = "xml/FailedList.xml";
     String temp = "";
-    final String SCORE = "成绩";
-    final String POINT = "得分";
+    final String SCORE = "tns:成绩";
+    final String POINT = "tns:得分";
 
     @Override
     public void startDocument() throws SAXException {
