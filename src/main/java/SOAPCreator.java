@@ -16,7 +16,7 @@ import javax.xml.soap.SOAPPart;
 /**
  * @author Daiqj
  */
-public class SearchScore {
+public class SOAPCreator {
 
     private String fileName;
     private SOAPMessage message;

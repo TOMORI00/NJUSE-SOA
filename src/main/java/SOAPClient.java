@@ -20,7 +20,7 @@ public class SOAPClient {
 
             System.out.println("Response:");
             response.writeTo(System.out);
-            System.out.println();
+            System.out.println("\n");
 
             connection.close();
         } catch (Exception e) {
@@ -36,7 +36,7 @@ public class SOAPClient {
 
         System.out.println("Request:");
         message.writeTo(System.out);
-        System.out.println();
+        System.out.println("\n");
 
         return message;
     }
@@ -47,10 +47,10 @@ public class SOAPClient {
         SOAPBody body = envelope.getBody();
 
         SOAPElement root = body.addChildElement("Func");
-        root.addChildElement("id").addTextNode("181250052");
+        root.addChildElement("id").addTextNode("181250016");
         root.addChildElement("courseId").addTextNode("123456");
-        root.addChildElement("scoreProperty").addTextNode("平时成绩");
-        root.addChildElement("newScore").addTextNode("100");
+        root.addChildElement("scoreProperty").addTextNode("平时分");
+        root.addChildElement("newScore").addTextNode("101");
     }
 
 }

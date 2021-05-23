@@ -1,3 +1,4 @@
+import except.NoMatchFoundException;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 
@@ -10,9 +11,10 @@ import java.io.File;
 
 public class ScoreService {
 
-    public void updateScore(String id, String courseId, String scoreProperty, int newScore, String listPath) {
+    public void updateScore(String id, String courseId, String scoreProperty, int newScore, String listPath) throws NoMatchFoundException {
         var factory = DocumentBuilderFactory.newInstance();
         DocumentBuilder builder;
+        boolean changed = false;
         try {
             builder = factory.newDocumentBuilder();
             Document document = builder.parse(listPath);
@@ -21,6 +23,8 @@ public class ScoreService {
                 var student = (Element) students.item(i);
                 var theId = student.getElementsByTagName("tns:学号").item(0).getTextContent();
                 if (!id.equals(theId)) continue;
+                System.out.println(id);
+                System.out.println(theId);
                 var scoreInfo = (Element) student.getElementsByTagName("tns:成绩信息").item(0);
                 var scores = scoreInfo.getElementsByTagName("tns:成绩");
                 for (int j = 0; j < scores.getLength(); j++) {
@@ -29,19 +33,28 @@ public class ScoreService {
                     var theProperty = attrs.getNamedItem("成绩性质").getTextContent();
                     var theCourseId = attrs.getNamedItem("课程编号").getTextContent();
                     if (scoreProperty.equals(theProperty) && courseId.equals(theCourseId)) {
+                        System.out.println("In here, changed!");
                         var mark = score.getElementsByTagName("tns:得分").item(0);
                         System.out.println("Old: " + mark.getTextContent());
                         System.out.println("New: " + newScore);
                         mark.setTextContent(String.valueOf(newScore));
+                        changed = true;
                         break;
                     }
                 }
                 break;
             }
+            if (!changed) {
+                System.out.println("Out out!");
+                throw new NoMatchFoundException();
+            }
             var transformerFactory = TransformerFactory.newInstance();
             var transformer = transformerFactory.newTransformer();
             var source = new DOMSource(document);
             transformer.transform(source, new StreamResult(new File(listPath)));
+
+        } catch (NoMatchFoundException e) {
+            throw e;
         } catch (Exception e) {
             e.printStackTrace();
             System.out.println("Failed");
