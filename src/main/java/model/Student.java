@@ -1,4 +1,5 @@
-import java.util.ArrayList;
+package model;
+
 import java.util.List;
 
 /**
@@ -69,4 +70,5 @@ public class Student {
     public void setScores(List<Score> scores) {
         this.scores = scores;
     }
+
 }

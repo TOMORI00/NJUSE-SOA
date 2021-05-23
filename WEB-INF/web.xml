@@ -11,14 +11,14 @@
        两个组成部分的 servlet-name 的值必须一致。
     -->
     <servlet>
-        <servlet-name>SearchStudentServlet</servlet-name>
+        <servlet-name>StudentServlet</servlet-name>
         <!-- 书写 servlet 的全限定路径（包名+类名） -->
-        <servlet-class>SearchStudentServlet</servlet-class>
+        <servlet-class>StudentServlet</servlet-class>
     </servlet>
 
     <servlet-mapping>
-        <servlet-name>SearchStudentServlet</servlet-name>
+        <servlet-name>StudentServlet</servlet-name>
         <!-- 配置 servlet 的访问别名 -->
-        <url-pattern>/SearchStudentServlet</url-pattern>
+        <url-pattern>/StudentServlet</url-pattern>
     </servlet-mapping>
 </web-app>
