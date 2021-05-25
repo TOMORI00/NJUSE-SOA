@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<tns:课程成绩列表 xmlns:tns="http://jw.nju.edu.cn/schema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-            xmlns="http://jw.nju.edu.cn/schema" xsi:schemaLocation="http://jw.nju.edu.cn/schema ScoreList.xsd">
+<tns:课程成绩列表
+        xmlns:tns="http://jw.nju.edu.cn/schema"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns="http://jw.nju.edu.cn/schema"
+        xsi:schemaLocation="http://jw.nju.edu.cn/schema ScoreList.xsd">
     <tns:课程成绩 课程编号="123456" 成绩性质="平时成绩">
         <tns:成绩>
             <tns:学号>181250001</tns:学号>

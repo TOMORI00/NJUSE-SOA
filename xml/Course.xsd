@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<schema xmlns="http://www.w3.org/2001/XMLSchema"
-        targetNamespace="http://jw.nju.edu.cn/schema" xmlns:nju="http://www.nju.edu.cn/schema"
-        xmlns:tns="http://jw.nju.edu.cn/schema" elementFormDefault="qualified">
+<schema xmlns:tns="http://jw.nju.edu.cn/schema"
+        xmlns:nju="http://www.nju.edu.cn/schema"
+        xmlns="http://www.w3.org/2001/XMLSchema"
+        targetNamespace="http://jw.nju.edu.cn/schema"
+        elementFormDefault="qualified">
+
     <import namespace="http://www.nju.edu.cn/schema" schemaLocation="Department.xsd"/>
+
     <element name="课程信息" type="tns:课程信息类型"/>
     <complexType name="课程信息类型">
         <sequence>

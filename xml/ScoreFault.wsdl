@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<description xmlns:tns="http://jw.nju.edu.cn/wsdl/faults"
+             xmlns:xs="http://www.w3.org/2001/XMLSchema"
+             xmlns:fault="http://jw.nju.edu.cn/schema/faults"
+             xmlns="http://www.w3.org/ns/wsdl"
+             targetNamespace="http://jw.nju.edu.cn/wsdl/faults">
+
+    <types>
+        <xs:import
+                namespace="http://jw.nju.edu.cn/schema/faults"
+                schemaLocation="ScoreFault.xsd"/>
+    </types>
+
+    <interface name="scoreFaultsInterface">
+        <fault name="courseNotFound" element="fault:NotFound">
+            <documentation>未找到该课程</documentation>
+        </fault>
+        <fault name="scoreTypeNotFound" element="fault:NotFound">
+            <documentation>未找到该成绩类型</documentation>
+        </fault>
+        <fault name="studentNotFound" element="fault:NotFound">
+            <documentation>未找到该学生</documentation>
+        </fault>
+        <fault name="scoreNotFound" element="fault:NotFound">
+            <documentation>未找到指定学号的成绩</documentation>
+        </fault>
+        <fault name="existedScore" element="fault:Existed">
+            <documentation>当前学生的该课程成绩已存在</documentation>
+        </fault>
+        <fault name="paramFault" element="fault:Param">
+            <documentation>参数格式错误</documentation>
+        </fault>
+
+    </interface>
+
+</description>

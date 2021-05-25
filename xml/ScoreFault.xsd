@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<schema xmlns:tns="http://jw.nju.edu.cn/schema/faults"
+        xmlns="http://www.w3.org/2001/XMLSchema"
+        targetNamespace="http://jw.nju.edu.cn/schema/faults"
+        elementFormDefault="qualified">
+
+    <element name="Param" type="tns:ParamFaultType"/>
+    <element name="NotFound" type="tns:NotFoundType"/>
+    <element name="Existed" type="tns:ExistedType"/>
+
+    <complexType name="ParamFaultType">
+        <all>
+            <element name="ParamIndex" type="integer"/>
+            <element name="FaultInfo" type="string"/>
+        </all>
+        <attribute name="ParamName" type="string"/>
+    </complexType>
+
+    <complexType name="NotFoundType">
+        <sequence>
+            <element name="NotFoundReason" type="tns:NotFoundReasonType"/>
+            <element name="NotFoundInfo" type="string"/>
+        </sequence>
+    </complexType>
+
+    <simpleType name="NotFoundReasonType">
+        <restriction base="string">
+            <enumeration value="学号不存在"/>
+            <enumeration value="课程不存在"/>
+            <enumeration value="成绩类型不存在"/>
+            <enumeration value="成绩不存在"/>
+        </restriction>
+    </simpleType>
+
+    <complexType name="ExistedType">
+        <sequence>
+            <element name="ExistedReason" type="tns:ExistedReasonType"/>
+            <element name="ExistedInfo" type="string"/>
+        </sequence>
+    </complexType>
+
+    <simpleType name="ExistedReasonType">
+        <restriction base="string">
+            <enumeration value="此课程成绩已存在"/>
+        </restriction>
+    </simpleType>
+
+</schema>

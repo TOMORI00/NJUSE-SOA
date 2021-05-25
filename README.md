@@ -1,29 +1,88 @@
 # readme
 
-# Assignment6 - 第八组
+# Assignment7 - 第八组
 
 ## 说明
 
-SoapClient, 用于发生与接受 Soap 封装的请求
+- 使用 WSDL2.0 版本
 
-StudentServlet.doPost, 接受输入，转化为 Json 解析参数，更新数据（war内拷贝），设置 Attr 并转发给 doGet 方法
+- 抽离 Fault 相关的WSDL组件，使用 import 进行导入
 
-## Ok
+- 为 http://jw.nju.edu.cn/scoreService 通过HTTP绑定SOAP消息
+  
+- 定义如下操作和错误：
+```
+    - add
+    
+        - 输入：jw:课程成绩列表 类型
+    
+        - 输出：wsdl:状态 类型
+    
+        - 错误：
+    
+            - 参数错误
+    
+            - 目标已存在
+    
+    - delete
+    
+        - 输入：jw:课程成绩列表 类型
+    
+        - 输出：wsdl:状态 类型
+    
+        - 错误：
+    
+            - 参数错误
+    
+            - 课程、学生、课程类型不存在
 
-![](doc/pic/ok.png)
+    - update
 
-## Err1
+        - 输入：jw:课程成绩列表 类型
 
-![](doc/pic/err1.png)
+        - 输出：wsdl:状态 类型
 
-## Err2
+        - 错误：
+        
+            - 参数错误
+    
+            - 课程、学生、课程类型不存在
+    
+    - get
 
-![](doc/pic/err2.png)
+        - 输入：jw:课程成绩列表 类型
 
-## Err3
+        - 输出：wsdl:状态 类型
 
-![](doc/pic/err3.png)
+        - 错误：
 
-## Err4
+            - 参数错误
 
-![](doc/pic/err4.png)
+            - 学生信息不存在
+```
+
+文件目录
+
+```
+    - xsd：
+    
+        - Course.xsd
+        
+        - Department.xsd
+        
+        - PersonInfo.xsd
+        
+        - ScoreFault.xsd
+        
+        - ScoreList.xsd
+        
+        - Student.xsd
+        
+        - StudentList.xsd
+        
+    - wsdl
+    
+        - ScoreService.wsdl
+        
+        - ScoreFault.wsdl
+```
