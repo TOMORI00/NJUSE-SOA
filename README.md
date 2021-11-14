@@ -1,7 +1,3 @@
-# readme
-
-# Assignment7 - 第八组
-
 ## 说明
 
 - 使用 WSDL2.0 版本
